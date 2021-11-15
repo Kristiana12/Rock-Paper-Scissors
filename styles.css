@@ -1,0 +1,346 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-background: rgb(27, 25, 55);
+  --color-background-m: rgba(27, 25, 55, 0.9);
+  --linear-gradient-card-1: 135deg, hsl(47, 94%, 68%), hsl(322, 100%, 66%);
+  --linear-gradient-card-2: 135deg, hsl(317, 94%, 68%), hsl(227, 99%, 59%);
+  --linear-gradient-button: 135deg, hsl(18, 100%, 64%), hsl(47, 100%, 56%);
+  --color-title: #13ffd5;
+  --color-text-win: #ffcd1e;
+  --color-text-lose: #ab5cdb;
+  --color-light: #fff;
+}
+
+body {
+  font-family: "Short Stack", cursive;
+  line-height: 1.7;
+  background-color: var(--color-background);
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/* HEADER */
+.header__title {
+  text-align: center;
+  font-size: calc(1rem + 2vw);
+  color: var(--color-title);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.header__rules {
+  display: flex;
+  padding-left: calc(1.5rem + 1vw);
+  align-items: center;
+}
+
+.header__rule--icon {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.header__rules--para {
+  color: var(--color-title);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* INSTRUCTIONS */
+.header__instructions {
+  background-color: var(--color-background-m);
+  color: var(--color-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+}
+
+.header__instructions--list {
+  padding: 4rem calc(1.2em + 3vw);
+}
+
+.header__instructions--list__item:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.header__instructions--list__item-winning-rules {
+  color: var(--color-text-win);
+  list-style: circle;
+}
+.header__instructions--list__item-winning-rules:first-of-type {
+  margin-top: 0.5rem;
+}
+
+/* GAME EVENT */
+.game-event {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5rem, 9rem));
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2rem 0.3rem;
+  place-items: center;
+  justify-content: center;
+  margin: 3rem 0.5rem;
+}
+
+/* STYLE CARDS */
+.card {
+  width: calc(4.5rem + 5vw);
+  height: 8.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img[src="images/icon-1.svg"],
+img[src="images/icon-2.svg"] {
+  width: 3rem;
+  height: 3rem;
+}
+
+img[src="images/icon-0.svg"] {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.opponent-card {
+  background: linear-gradient(var(--linear-gradient-card-1));
+}
+
+.opponent-card-4 {
+  position: relative;
+}
+
+.player-card {
+  background: linear-gradient(var(--linear-gradient-card-2));
+  position: relative;
+}
+
+.player-card img,
+.opponent-card-4 img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* BUTTON */
+#button {
+  grid-column: 1 / -1;
+}
+
+.button-start {
+  border: none;
+  border-radius: 10rem;
+  background: linear-gradient(var(--linear-gradient-button));
+  color: var(--color-light);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-start:active {
+  transform: translateY(2px);
+}
+
+#middle-text {
+  color: var(--color-text-win);
+  text-align: center;
+  /* grid-column: 1 / -1; */
+  display: none;
+}
+
+.middle-text__arrow-icon {
+  margin-top: 0.8rem;
+  animation: upAndDown 2s ease infinite;
+}
+
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* GETS WITH JS MANIPULATED */
+
+.player-card,
+.opponent-card-4 {
+  display: none;
+}
+
+.player-card-1,
+.opponent-card-4 {
+  visibility: hidden;
+}
+
+.opponent-card-4 img {
+  visibility: hidden;
+}
+
+.reset {
+  color: var(--color-text-win);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--color-text-win);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (min-width: 840px) {
+  /* HEADER */
+
+  .header__rules {
+    padding-left: calc(1.5rem + 6vw);
+  }
+
+  .header__rule--icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .header__rules--para {
+    font-size: 1.2rem;
+  }
+
+  /* INSTRUCTIONS */
+  .header__instructions--list {
+    padding: 4rem calc(1.2em + 7vw);
+  }
+
+  .header__instructions--list__item:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .header__instructions--list__item--icon-explanation {
+    margin-top: 1.5rem;
+  }
+
+  .header__instructions--list__item-winning-rules:first-of-type {
+    margin-top: 1.5rem;
+  }
+
+  /* GAME EVENT */
+  /* GRID */
+  .game-event {
+    grid-template-columns: repeat(5, minmax(6rem, 9rem));
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem 0.5rem;
+    margin: 2.2rem 0.8rem;
+  }
+
+  .opponent-card-1 {
+    grid-column: 2 / 3;
+  }
+  .opponent-card-2 {
+    grid-column: 3 / 4;
+  }
+  .opponent-card-3 {
+    grid-column: 4 / 5;
+  }
+  .opponent-card-4 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  #button,
+  #middle-text,
+  .reset {
+    grid-column: 2 / 5;
+  }
+
+  .player-card-1 {
+    grid-column: 5 / 6;
+  }
+
+  .player-card-2 {
+    grid-column: 2 / 3;
+  }
+
+  .player-card-3 {
+    grid-column: 3 / 4;
+  }
+
+  .player-card-4 {
+    grid-column: 4 / 5;
+  }
+  /* STYLE CARDS */
+  .card {
+    width: calc(5rem + 5vw);
+    height: 12rem;
+  }
+
+  img[src="images/icon-1.svg"],
+  img[src="images/icon-2.svg"] {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  img[src="images/icon-0.svg"] {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* BUTTON */
+
+  .button-start {
+    font-size: 1.5rem;
+    padding: 1.6rem 3rem;
+  }
+
+  .button-start:hover {
+    transform: translateY(5px);
+  }
+
+  #middle-text {
+    font-size: 1.5rem;
+  }
+
+  .reset {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .game-event {
+    grid-gap: 1rem 1.5rem;
+  }
+  .card {
+    width: 8.75rem;
+    height: 12rem;
+  }
+
+  .header {
+    max-width: 55.25rem;
+    margin: 0 auto;
+  }
+
+  .header__rules {
+    padding-left: 2rem;
+  }
+}

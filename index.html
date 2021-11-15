@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock | Paper | Scissors</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="header__title">Rock - Paper - Scissors</h1>
+        <div class="header__rules">
+          <img
+            class="header__rule--icon"
+            aria-hidden="true"
+            src="images/file.svg"
+            alt=""
+          />
+          <p class="header__rules--para">Read the Rules</p>
+        </div>
+        <div class="header__instructions">
+          <ul class="header__instructions--list">
+            <li class="header__instructions--list__item">
+              In rock-paper-scissors, at the beginning each player receives
+              three random cards.
+            </li>
+            <li class="header__instructions--list__item">
+              The two players will each choose a card to play. There are three
+              rounds in total.
+            </li>
+            <li class="header__instructions--list__item">
+              <ul>
+                <li class="header__instructions--list__item--icon-explanation">
+                  The card with the fist
+                  <img src="images/icon-0.svg" alt="" class="img__rock" />
+                  represents rock.
+                </li>
+                <li class="header__instructions--list__item--icon-explanation">
+                  The card with the hand flat
+                  <img src="images/icon-1.svg" alt="" class="img__paper" />
+                  represents paper.
+                </li>
+                <li class="header__instructions--list__item--icon-explanation">
+                  The card with the hand holding out two fingers
+                  <img src="images/icon-2.svg" alt="" class="img__scissors" />
+                  represents scissors.
+                </li>
+              </ul>
+            </li>
+            <li class="header__instructions--list__item">
+              The rules that determine which sign beats another are the
+              following:
+              <ul>
+                <li class="header__instructions--list__item-winning-rules">
+                  Rock wins over scissors
+                </li>
+                <li class="header__instructions--list__item-winning-rules">
+                  Scissors wins over paper
+                </li>
+                <li class="header__instructions--list__item-winning-rules">
+                  Paper wins over rock
+                </li>
+                <li class="header__instructions--list__item-winning-rules">
+                  If both players pick the same card, it’s a tie.
+                </li>
+              </ul>
+            </li>
+            <li class="header__instructions--list__item">
+              Your goal is to win as many rounds as possible.
+            </li>
+            <li class="header__instructions--list__item">
+              Good luck and have fun!
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main class="game-event">
+        <!-- Opponents Cards -->
+        <div class="card opponent-card opponent-card-1">
+          <img class="card__img" src="images/icon-0.svg" alt="rock" />
+        </div>
+        <div class="card opponent-card opponent-card-2">
+          <img class="card__img" src="images/icon-1.svg" alt="paper" />
+        </div>
+        <div class="card opponent-card opponent-card-3">
+          <img class="card__img" src="images/icon-2.svg" alt="scissors" />
+        </div>
+        <!-- Start Button -->
+        <div id="button">
+          <button class="button-start">Start New Game</button>
+        </div>
+        <!-- Played Opponent Card -->
+        <div class="card opponent-card opponent-card-4">
+          <img
+            class="card__img opponent-card__img-4"
+            src="images/icon-0.svg"
+            alt=""
+          />
+        </div>
+        <!-- Text in the middle -->
+        <div id="middle-text">
+          <p class="text">Pick a card to play!</p>
+          <img
+            src="images/Arrow.svg"
+            aria-hidden="true"
+            alt=""
+            class="middle-text__arrow-icon"
+          />
+        </div>
+        <p class="reset">Reset</p>
+        <!-- Played Player Card -->
+        <div class="card player-card player-card-1">
+          <img class="card__img" src="images/icon-0.svg" alt="" />
+        </div>
+        <!-- Players cards -->
+        <div class="card player-card player-card-2">
+          <img class="card__img" src="images/icon-0.svg" alt="" />
+        </div>
+        <div class="card player-card player-card-3">
+          <img class="card__img" src="images/icon-0.svg" alt="" />
+        </div>
+        <div class="card player-card player-card-4">
+          <img class="card__img" src="images/icon-0.svg" alt="" />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
