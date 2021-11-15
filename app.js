@@ -27,7 +27,7 @@ const randomNumberComputer3 = Math.floor(Math.random() * 3);
 let isPlaying = true;
 let numberOfCardsLeft = 3;
 
-FIXME;
+//FIXME;
 // const cardsLeftToPlay = () => {
 //   numberOfCardsLeft--;
 //   if (numberOfCardsLeft === 0) isPlaying = false;
@@ -63,7 +63,7 @@ const getPlayerRandomIcon = () => {
   );
 };
 
-FIXME;
+//FIXME;
 //Reset Button
 // const resetGame = () => {
 //   reset.style.display = "none";
