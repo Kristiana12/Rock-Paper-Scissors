@@ -8,4 +8,8 @@ In the middle you can see the result of that round.
 
 The reset button is not yet implemented, but is goint to when i get it to work properly ;)
 Till then please just refresh the window to start over! 
-Many thanks and enjoy the game! :)
+Enjoy the game! 😄
+
+
+************** UPDATE ******************
+Reset button has been successfully added! 💪
